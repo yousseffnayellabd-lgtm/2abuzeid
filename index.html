@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" id="htmlRoot">
 <head>
@@ -11,12 +10,9 @@
     </title>
 
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-
         :root {
             --primary: #c5a059;
             --primary-dark: #a3813c;
@@ -91,7 +87,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 35px;
+            gap: 25px;
             align-items: center;
         }
 
@@ -401,6 +397,8 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
         }
 
         .model-card:hover {
@@ -418,6 +416,10 @@
         .model-info {
             padding: 18px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
         }
 
         .model-info h3 {
@@ -432,291 +434,350 @@
             margin-top: 5px;
         }
 
+        .model-price {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 12px 0;
+            background: rgba(197, 160, 89, 0.08);
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px dashed var(--primary);
+        }
+
         .model-more-btn {
             display: inline-block;
-            margin-top: 12px;
+            margin-top: 10px;
             background: var(--primary);
             color: #fff;
-            padding: 7px 18px;
+            padding: 8px 20px;
             border-radius: 20px;
             text-decoration: none;
             font-size: 13px;
             font-weight: 700;
+            transition: var(--transition);
         }
 
-        .stats-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 50px 0;
-            text-align: center;
+        .model-more-btn:hover {
+            background: var(--primary-dark);
         }
 
-        .stat-card {
+        .order-form-container {
             background: var(--bg-card);
-            padding: 25px;
-            border-radius: 16px;
             border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
             box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .stat-card h3 {
-            font-size: 34px;
-            color: var(--primary);
-            font-weight: 800;
-        }
-
-        .stat-card p {
-            color: var(--text-muted);
-            font-size: 14px;
-            margin-top: 5px;
-        }
-
-        .booking-form {
-            background: var(--bg-card);
-            padding: 35px;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow);
-            margin-top: 60px;
-        }
-
-        .form-grid {
+        .form-grid-custom {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
 
-        .form-group input,
-        .form-group select,    
-        .form-group textarea {
+        .form-group-custom {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-align: right;
+        }
+
+        .form-group-custom label {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        .form-group-custom input,
+        .form-group-custom select,
+        .form-group-custom textarea {
             width: 100%;
             padding: 12px 16px;
-            border-radius: 10px;
+            border-radius: 12px;
             border: 1px solid var(--border-color);
             background: var(--bg-main);
             color: var(--text-main);
             font-size: 14px;
             outline: none;
-            margin-top: 6px;
+            transition: var(--transition);
         }
 
-        .form-submit-btn {
-            background: var(--primary);
-            color: #fff;
-            padding: 14px 30px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            margin-top: 25px;
+        .form-group-custom input:focus,
+        .form-group-custom select:focus,
+        .form-group-custom textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+        }
+
+        .btn-whatsapp-send {
             width: 100%;
-            transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2);
-        }
-
-        .form-submit-btn:hover {
-            background: var(--primary-dark);
-        }
-
-        .info-section {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 22px;
-            padding: 45px;
-            margin-top: 70px;
-            box-shadow: var(--shadow);
-        }
-
-        .contact-header-info {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 30px;
-            text-align: center;
-            margin-bottom: 35px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .contact-action-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
             background: var(--primary);
             color: #fff;
-            padding: 10px 24px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 15px;
-            margin-top: 12px;
-            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2);
-            transition: var(--transition);
-        }
-
-        .contact-action-btn:hover {
-            background: var(--primary-dark);
-        }
-
-        .social-links {
+            border: none;
+            padding: 15px;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-top: 15px;
-        }
-
-        .social-link {
-            display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            color: #fff;
-            padding: 10px 18px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 14px;
+            gap: 10px;
+            margin-top: 25px;
             transition: var(--transition);
+            box-shadow: 0 8px 20px rgba(197, 160, 89, 0.25);
         }
 
-        .social-link:hover {
+        .btn-whatsapp-send:hover {
+            background: var(--primary-dark);
             transform: translateY(-2px);
         }
 
-        .facebook-link { background: #1877f2; }
-        .facebook-link:hover { background: #145dbf; }
-
-        .instagram-link { background: #d62976; }
-        .instagram-link:hover { background: #ad1f60; }
-
-        .tiktok-link { background: #111; }
-        .tiktok-link:hover { background: #000; }
-
-        .branches-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 35px;
-        }
-
-        .branch-card {
-            background: var(--bg-main);
+        .brochure-card {
+            background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 22px;
+            border-radius: 18px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        .branch-card h4 {
-            color: var(--primary);
-            font-size: 17px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            display: flex;
+        .brochure-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .brochure-icon {
+            font-size: 45px;
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+
+        .brochure-card h3 {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .brochure-btn {
+            display: inline-flex;
             align-items: center;
             gap: 8px;
-        }
-
-        .branch-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .branch-card li {
-            color: var(--text-muted);
-            font-size: 14px;
-            margin-bottom: 10px;
-            position: relative;
-            font-weight: 500;
-        }
-
-        [dir="rtl"] .branch-card li {
-            padding-right: 15px;
-        }
-
-        [dir="rtl"] .branch-card li::before {
-            content: "•";
-            color: var(--primary);
-            position: absolute;
-            right: 0;
-            font-weight: bold;
-        }
-
-        [dir="ltr"] .branch-card li {
-            padding-left: 15px;
-        }
-
-        [dir="ltr"] .branch-card li::before {
-            content: "•";
-            color: var(--primary);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            background-color: #25d366;
-            color: #fff;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            transition: var(--transition);
-            text-decoration: none;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
             background: var(--primary);
             color: #fff;
-            width: 45px;
-            height: 45px;
-            border-radius: 12px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            margin-top: 15px;
+            transition: var(--transition);
+        }
+
+        .brochure-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .whatsapp-float-right {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #fff;
+            padding: 12px 22px;
+            border-radius: 50px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            border: none;
-            box-shadow: var(--shadow);
-            opacity: 0;
-            visibility: hidden;
+            gap: 10px;
+            font-size: 15px;
+            font-weight: 800;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 2000;
             transition: var(--transition);
-            z-index: 1000;
+            text-decoration: none;
+            animation: pulseWhatsapp 2s infinite;
         }
 
-        .scroll-top.visible {
-            opacity: 1;
-            visibility: visible;
+        .whatsapp-float-right i {
+            font-size: 24px;
         }
 
-        [dir="ltr"] .whatsapp-float {
-            left: auto;
-            right: 30px;
+        .whatsapp-float-right:hover {
+            transform: scale(1.08) translateY(-3px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.6);
         }
 
-        [dir="ltr"] .scroll-top {
-            right: auto;
-            left: 30px;
+        @keyframes pulseWhatsapp {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
+
+        .branches-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .branch-card-custom {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .branch-card-custom::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--primary);
+        }
+
+        .branch-card-custom:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+        }
+
+        .branch-card-custom h3 {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .branch-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: var(--text-main);
+            font-size: 14px;
+        }
+
+        .branch-detail i {
+            color: var(--primary);
+            margin-top: 4px;
+            font-size: 16px;
+        }
+
+        .branch-map-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            margin-top: 15px;
+            transition: var(--transition);
+            width: fit-content;
+        }
+
+        .branch-map-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .social-contact-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 45px 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .hotline-banner {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            padding: 25px 40px;
+            border-radius: 20px;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 10px 25px rgba(197, 160, 89, 0.3);
+            margin-bottom: 35px;
+        }
+
+        .hotline-banner span {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hotline-banner a {
+            color: #fff;
+            font-size: 36px;
+            font-weight: 900;
+            text-decoration: none;
+            direction: ltr;
+            letter-spacing: 2px;
+        }
+
+        .social-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-box {
+            padding: 22px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 16px;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .social-box i {
+            font-size: 32px;
+        }
+
+        .social-box:hover {
+            transform: translateY(-5px) scale(1.03);
+        }
+
+        .social-facebook { background: linear-gradient(135deg, #1877f2, #0d52b1); }
+        .social-instagram { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .social-tiktok { background: linear-gradient(135deg, #000000, #25f4ee, #fe2c55); }
 
         footer {
             text-align: center;
@@ -728,7 +789,6 @@
         }
 
         @media (max-width: 768px) {
-
             .nav-links {
                 position: fixed;
                 top: 76px;
@@ -775,214 +835,133 @@
                 height: 45px;
             }
 
-            .info-section {
-                padding: 25px;
+            .hotline-banner a {
+                font-size: 28px;
+            }
+
+            .whatsapp-float-right span {
+                display: none;
+            }
+
+            .whatsapp-float-right {
+                padding: 14px;
+                border-radius: 50%;
             }
         }
-
     </style>
 </head>
 
 <body>
 
+    <!-- 🟢 زر الواتساب العائم المتميز على اليمين -->
+    <a href="https://wa.me/201210999986" target="_blank" class="whatsapp-float-right" aria-label="تواصل معنا عبر واتساب">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span data-ar="تواصل معنا واتساب" data-en="WhatsApp Us">تواصل معنا واتساب</span>
+    </a>
+
+    <!-- صفحة عرض الموديلات والأسعار الخاصة بكل توكيل -->
     <div class="models-page" id="modelsPage">
-
-        <button class="close-models"
-                onclick="closeModels()"
-                title="إغلاق"
-                aria-label="إغلاق">
-
+        <button class="close-models" onclick="closeModels()" title="إغلاق" aria-label="إغلاق">
             <i class="fa-solid fa-xmark"></i>
-
         </button>
 
         <div class="models-header">
-
             <h2 id="modelsTitle">BMW</h2>
-
-            <p id="modelsSubtitle"
-               data-ar="موديلات السيارات المتاحة"
-               data-en="Available Car Models">
-                موديلات السيارات المتاحة
+            <p id="modelsSubtitle" data-ar="موديلات السيارات المتاحة وقيمة المقدم" data-en="Available Car Models & Down Payments">
+                موديلات السيارات المتاحة وقيمة المقدم
             </p>
-
         </div>
 
         <div class="models-grid" id="modelsGrid"></div>
-
     </div>
 
+    <!-- الهيدر الرئيسي والقائمة -->
     <header>
-
         <a href="#" class="logo">
-
-            <span data-ar="أبو زيد للسيارات"
-                  data-en="Abu Zeid Automotive">
+            <span data-ar="أبو زيد للسيارات" data-en="Abu Zeid Automotive">
                 أبو زيد للسيارات
             </span>
-
         </a>
 
         <ul class="nav-links" id="navLinks">
-
             <li>
-                <a href="#brands"
-                   data-ar="التوكيلات"
-                   data-en="Brands"
-                   onclick="toggleMenu()">
+                <a href="#brands" data-ar="التوكيلات" data-en="Brands" onclick="toggleMenu()">
                     التوكيلات
                 </a>
             </li>
-
             <li>
-                <a href="#booking"
-                   data-ar="طلب حجز / استفسار"
-                   data-en="Book / Inquiry"
-                   onclick="toggleMenu()">
+                <a href="#carBookingPage" data-ar="طلب حجز / استفسار" data-en="Book / Inquiry" onclick="toggleMenu()">
                     طلب حجز / استفسار
                 </a>
             </li>
-
             <li>
-                <a href="#contact"
-                   data-ar="الفروع وتواصل معنا"
-                   data-en="Contact & Branches"
-                   onclick="toggleMenu()">
-                    الفروع وتواصل معنا
+                <a href="#brochures" data-ar="بروشورات السيارات PDF" data-en="Car Brochures PDF" onclick="toggleMenu()">
+                    بروشورات السيارات PDF
                 </a>
             </li>
-
+            <li>
+                <a href="#branchesPage" data-ar="فروعنا" data-en="Branches" onclick="toggleMenu()">
+                    فروعنا
+                </a>
+            </li>
+            <li>
+                <a href="#contactSocialPage" data-ar="تواصل معنا" data-en="Contact Us" onclick="toggleMenu()">
+                    تواصل معنا
+                </a>
+            </li>
         </ul>
 
         <div class="controls">
-
-            <button class="btn-theme"
-                    id="themeToggle"
-                    onclick="toggleTheme()"
-                    aria-label="تغيير الوضع">
-
+            <button class="btn-theme" id="themeToggle" onclick="toggleTheme()" aria-label="تغيير الوضع">
                 <i class="fa-solid fa-moon"></i>
-
             </button>
 
-            <button class="btn-lang"
-                    id="langToggle"
-                    onclick="toggleLang()">
+            <button class="btn-lang" id="langToggle" onclick="toggleLang()">
                 EN
             </button>
 
-            <button class="menu-toggle"
-                    onclick="toggleMenu()"
-                    aria-label="القائمة">
-
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="القائمة">
                 <i class="fa-solid fa-bars"></i>
-
             </button>
-
         </div>
-
     </header>
 
+    <!-- الهيرو سكشن -->
     <section class="hero">
-
-        <h1 data-ar="وجهتك الأولى لأحدث السيارات العالمية"
-            data-en="Your First Destination for the Latest Global Cars">
+        <h1 data-ar="وجهتك الأولى لأحدث السيارات العالمية" data-en="Your First Destination for the Latest Global Cars">
             وجهتك الأولى لأحدث السيارات العالمية
         </h1>
-
-        <p data-ar="نقدم لك تشكيلة واسعة من أرقى التوكيلات العالمية بخيارات تمويل مرنة وخدمات ما بعد البيع المعتمدة."
-           data-en="We offer you a wide selection of the finest global agencies with flexible financing options and certified after-sales services.">
+        <p data-ar="نقدم لك تشكيلة واسعة من أرقى التوكيلات العالمية بخيارات تمويل مرنة وخدمات ما بعد البيع المعتمدة." data-en="We offer you a wide selection of the finest global agencies with flexible financing options and certified after-sales services.">
             نقدم لك تشكيلة واسعة من أرقى التوكيلات العالمية بخيارات تمويل مرنة وخدمات ما بعد البيع المعتمدة.
         </p>
-
-        <a href="#brands"
-           class="btn-main"
-           data-ar="استعرض التوكيلات الآن"
-           data-en="Browse Brands Now">
+        <a href="#brands" class="btn-main" data-ar="استعرض التوكيلات الآن" data-en="Browse Brands Now">
             استعرض التوكيلات الآن
         </a>
-
     </section>
 
+    <!-- قسم التوكيلات -->
     <div class="container" id="brands">
-
         <div class="section-title">
-
-            <h2 data-ar="توكيلات السيارات المعتمدة"
-                data-en="Certified Car Agencies">
+            <h2 data-ar="توكيلات السيارات المعتمدة" data-en="Certified Car Agencies">
                 توكيلات السيارات المعتمدة
             </h2>
-
-            <p data-ar="اختر من بين أشهر العلامات التجارية العالمية المتاحة لدينا"
-               data-en="Choose from the most famous international brands available with us">
+            <p data-ar="اختر من بين أشهر العلامات التجارية العالمية المتاحة لدينا" data-en="Choose from the most famous international brands available with us">
                 اختر من بين أشهر العلامات التجارية العالمية المتاحة لدينا
             </p>
-
         </div>
 
         <div class="search-box">
-
-            <input type="text"
-                   id="brandSearch"
-                   oninput="searchBrands()"
-                   placeholder="ابحث عن الماركة..."
-                   data-ar-placeholder="ابحث عن الماركة..."
-                   data-en-placeholder="Search for brand..."
-                   aria-label="البحث عن الماركة">
-
+            <input type="text" id="brandSearch" oninput="searchBrands()" placeholder="ابحث عن الماركة..." data-ar-placeholder="ابحث عن الماركة..." data-en-placeholder="Search for brand..." aria-label="البحث عن الماركة">
         </div>
 
         <div class="filter-tabs">
-
-            <button class="filter-btn active"
-                    onclick="filterBrands('all', this)"
-                    data-ar="الكل"
-                    data-en="All">
-                الكل
-            </button>
-
-            <button class="filter-btn"
-                    onclick="filterBrands('european', this)"
-                    data-ar="أوربي"
-                    data-en="European">
-                أوربي
-            </button>
-
-            <button class="filter-btn"
-                    onclick="filterBrands('swedish', this)"
-                    data-ar="سويدي"
-                    data-en="Swedish">
-                سويدي
-            </button>
-
-            <button class="filter-btn"
-                    onclick="filterBrands('japanese', this)"
-                    data-ar="ياباني"
-                    data-en="Japanese">
-                ياباني
-            </button>
-
-            <button class="filter-btn"
-                    onclick="filterBrands('chinese', this)"
-                    data-ar="صيني"
-                    data-en="Chinese">
-                صيني
-            </button>
-
-            <button class="filter-btn"
-                    onclick="filterBrands('korean', this)"
-                    data-ar="كوري"
-                    data-en="Korean">
-                كوري
-            </button>
-
-            <button class="filter-btn"
-                    onclick="filterBrands('malaysian', this)"
-                    data-ar="ماليزي"
-                    data-en="Malaysian">
-                ماليزي
-            </button>
-
+            <button class="filter-btn active" onclick="filterBrands('all', this)" data-ar="الكل" data-en="All">الكل</button>
+            <button class="filter-btn" onclick="filterBrands('european', this)" data-ar="أوربي" data-en="European">أوربي</button>
+            <button class="filter-btn" onclick="filterBrands('swedish', this)" data-ar="سويدي" data-en="Swedish">سويدي</button>
+            <button class="filter-btn" onclick="filterBrands('japanese', this)" data-ar="ياباني" data-en="Japanese">ياباني</button>
+            <button class="filter-btn" onclick="filterBrands('chinese', this)" data-ar="صيني" data-en="Chinese">صيني</button>
+            <button class="filter-btn" onclick="filterBrands('korean', this)" data-ar="كوري" data-en="Korean">كوري</button>
+            <button class="filter-btn" onclick="filterBrands('malaysian', this)" data-ar="ماليزي" data-en="Malaysian">ماليزي</button>
         </div>
 
         <div class="brands-grid">
@@ -1226,349 +1205,376 @@
             </div>
 
         </div>
-
-        <div class="stats-section">
-
-            <div class="stat-card">
-                <h3>+15</h3>
-                <p data-ar="توكيل معتمد" data-en="Certified Agency">توكيل معتمد</p>
-            </div>
-
-            <div class="stat-card">
-                <h3>+10,000</h3>
-                <p data-ar="عميل سعيد" data-en="Happy Client">عميل سعيد</p>
-            </div>
-
-            <div class="stat-card">
-                <h3>+10</h3>
-                <p data-ar="فروع في خدمتك" data-en="Branches at your service">فروع في خدمتك</p>
-            </div>
-
-        </div>
-
-        <div class="booking-form" id="booking">
-
-            <div class="section-title" style="margin-bottom: 20px;">
-
-                <h2 data-ar="طلب حجز / استفسار" data-en="Book / Inquiry">
-                    طلب حجز / استفسار
-                </h2>
-
-                <p data-ar="أدخل بياناتك وسيتم التواصل معك في أقرب وقت"
-                   data-en="Enter your details and we will contact you as soon as possible">
-                    أدخل بياناتك وسيتم التواصل معك في أقرب وقت
-                </p>
-
-            </div>
-
-            <form onsubmit="submitBooking(event)">
-
-                <div class="form-grid">
-
-               <div class="form-group">
-
-             <div class="form-group">
-
-            <label for="detailsInput" data-ar="التفاصيل" data-en="Details">التفاصيل</label>
-            <textarea 
-
-                 id="detailsInput" 
-
-                   name="تفاصيل" 
-             rows="4" 
-
-                placeholder="أكتب التفاصيل أو الاستفسار هنا..."
-               data-ar-placeholder="أكتب التفاصيل أو الاستفسار هنا..."
-            
-           data-en-placeholder="Write details or inquiry here..."
-          
-           ></textarea>
-
-             </div>
-             
-                        <label data-ar="الاسم بالكامل" data-en="Full Name">
-                            الاسم بالكامل
-                        </label>
-
-                        <input type="text"
-                               required
-                               placeholder="أدخل اسمك الكريم"
-                               data-ar-placeholder="أدخل اسمك الكريم"
-                               data-en-placeholder="Enter your full name">
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label data-ar="رقم الهاتف" data-en="Phone Number">
-                            رقم الهاتف
-                        </label>
-
-                        <input type="tel"
-                               required
-                               placeholder="01210999986"
-                               data-ar-placeholder="01210999986"
-                               data-en-placeholder="01210999986">
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label data-ar="الماركة المطلوبة" data-en="Preferred Brand">
-                            الماركة المطلوبة
-                        </label>
-
-                        <select id="brandSelect">
-
-                            <option value="Audi">أودي - Audi</option>
-                            <option value="BMW">بي إم دبليو - BMW</option>
-                            <option value="Volkswagen">فولكس فاجن - Volkswagen</option>
-                            <option value="Opel">أوبل - Opel</option>
-                            <option value="Mercedes">مرسيدس - Mercedes</option>
-                            <option value="Fiat">فيات - Fiat</option>
-                            <option value="Peugeot">بيجو - Peugeot</option>
-                            <option value="Renault">رينو - Renault</option>
-                            <option value="Citroen">ستروين - Citroën</option>
-                            <option value="Skoda">سكودا - Skoda</option>
-                            <option value="Seat">سيات - Seat</option>
-                            <option value="Cupra">كوبرا - Cupra</option>
-                            <option value="Volvo">ڤولڤو - Volvo</option>
-                            <option value="Nissan">نيسان - Nissan</option>
-                            <option value="Toyota">تويوتا - Toyota</option>
-                            <option value="Suzuki">سوزوكي - Suzuki</option>
-                            <option value="Mazda">مازدا - Mazda</option>
-                            <option value="Subaru">سوبارو - Subaru</option>
-                            <option value="Hyundai">هيونداي - Hyundai</option>
-                            <option value="Kia">كيا - Kia</option>
-                            <option value="KGM">كي جي إم - KGM</option>
-                            <option value="Proton">بروتون - Proton</option>
-                            <option value="Kaiyi">كايي - Kaiyi</option>
-                            <option value="MG">إم جي - MG</option>
-                            <option value="Deepal">ديبال - Deepal</option>
-                            <option value="Chery">شيري - Chery</option>
-                            <option value="BYD">بي واي دي - BYD</option>
-                            <option value="Changan">شانجان - Changan</option>
-                            <option value="GAC">جي إيه سي - GAC</option>
-                            <option value="Soueast">سويست - Soueast</option>
-                            <option value="BAIC">بايك - BAIC</option>
-                            <option value="Haval">هافال - Haval</option>
-                            <option value="Geely">جيلي - Geely</option>
-                            <option value="Jetour">جيتور - Jetour</option>
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-                <button type="submit"
-                        class="form-submit-btn"
-                        data-ar="إرسال الطلب"
-                        data-en="Submit Request">
-                    إرسال الطلب
-                </button>
-
-            </form>
-
-        </div>
-
-        <div class="info-section" id="contact">
-
-            <div class="contact-header-info">
-
-                <div>
-
-                    <h3 data-ar="الخط الساخن" data-en="Hotline">
-                        الخط الساخن
-                    </h3>
-
-                    <a href="tel:15079" class="contact-action-btn">
-                        <i class="fa-solid fa-phone"></i>
-                        15079
-                    </a>
-
-                </div>
-
-                <div>
-
-                    <h3 data-ar="تواصل معنا" data-en="Contact Us">
-                        تواصل معنا
-                    </h3>
-
-                    <div class="social-links">
-
-                        <a href="https://www.facebook.com/share/1GLY1MK1MX/?mibextid=wwXIfr"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="social-link facebook-link">
-
-                            <i class="fa-brands fa-facebook-f"></i>
-                            Facebook
-
-                        </a>
-
-                        <a href="https://www.instagram.com/abuzeid_automotive?stkn=NjVrcmh6OHk4cm9i"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="social-link instagram-link">
-
-                            <i class="fa-brands fa-instagram"></i>
-                            Instagram
-
-                        </a>
-
-                        <a href="https://www.tiktok.com/@abu_zeid_automotive?_r=1&_t=ZS-99ySvdfkZfO"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="social-link tiktok-link">
-
-                            <i class="fa-brands fa-tiktok"></i>
-                            TikTok
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="section-title" style="margin-bottom: 25px;">
-
-                <h2 data-ar="فروعنا" data-en="Our Branches">
-                    فروعنا
-                </h2>
-
-                <p data-ar="يسعدنا استقبالكم في أقرب فرع لكم"
-                   data-en="We are happy to welcome you at your nearest branch">
-                    يسعدنا استقبالكم في أقرب فرع لكم
-                </p>
-
-            </div>
-
-            <div class="branches-grid">
-
-                <div class="branch-card">
-                    <h4>
-                        <i class="fa-solid fa-location-dot"></i>
-                        فروع مصر الجديدة
-                    </h4>
-                    <ul>
-                        <li>64 الخليفة المأمون - مصر الجديدة - روكسي</li>
-                        <li>28 ش عمار بن ياسر، النزهة، مصر الجديدة، أمام سور الكلية الحربية</li>
-                    </ul>
-                </div>
-
-                <div class="branch-card">
-                    <h4>
-                        <i class="fa-solid fa-location-dot"></i>
-                        فروع الجيزة
-                    </h4>
-                    <ul>
-                        <li>19 شارع وزارة الزراعة - نزلة كوبري الدقي - الجيزة</li>
-                        <li>144 شارع 26 يوليو، منطقة الصحفيين، حي العجوزة، بجوار مسرح البالون</li>
-                    </ul>
-                </div>
-
-                <div class="branch-card">
-                    <h4>
-                        <i class="fa-solid fa-location-dot"></i>
-                        فروع مدينة نصر
-                    </h4>
-                    <ul>
-                        <li>16 شارع كابول متفرع من مكرم عبيد أمام مول مصطفى السلاب مباشرة</li>
-                        <li>35 ذاكر حسين - مدينة نصر</li>
-                    </ul>
-                </div>
-
-                <div class="branch-card">
-                    <h4>
-                        <i class="fa-solid fa-location-dot"></i>
-                        فروع مدينتي
-                    </h4>
-                    <ul>
-                        <li>مدخل مدينتي 1 - بجوار بنزينة Chillout - طريق السويس</li>
-                    </ul>
-                </div>
-
-                <div class="branch-card">
-                    <h4>
-                        <i class="fa-solid fa-location-dot"></i>
-                        فرع كورنيش النيل
-                    </h4>
-                    <ul>
-                        <li>الساحل - 1351 كورنيش النيل</li>
-                    </ul>
-                </div>
-
-                <div class="branch-card">
-                    <h4>
-                        <i class="fa-solid fa-location-dot"></i>
-                        فرع الغردقة
-                    </h4>
-                    <ul>
-                        <li>بنزينة Mobil أمام الجونة</li>
-                    </ul>
-                </div>
-
-                <div class="branch-card">
-                    <h4>
-                        <i class="fa-solid fa-location-dot"></i>
-                        فرع القطامية
-                    </h4>
-                    <ul>
-                        <li>وان قطامية، الطريق الدائري، أعلى نفق السخنة، ميدان محمد زكي</li>
-                    </ul>
-                </div>
-
-            </div>
-
-        </div>
-
     </div>
 
-    <a href="https://wa.me/201210999986"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="whatsapp-float"
-       title="WhatsApp">
+    <!-- 📝 قسم/صفحة طلب الحجز واختيار الفئة واللون -->
+    <div class="container" id="carBookingPage">
+        <div class="section-title">
+            <h2 data-ar="طلب استفسار / حجز سيارة" data-en="Car Booking & Inquiry">
+                طلب استفسار / حجز سيارة
+            </h2>
+            <p data-ar="اختر السيارة والفئة المناسبة لك وأرسل طلبك مباشرة ليتم التواصل معك" data-en="Select your car, trim level, and color to send your inquiry">
+                اختر السيارة والفئة المناسبة لك وأرسل طلبك مباشرة ليتم التواصل معك
+            </p>
+        </div>
 
-        <i class="fa-brands fa-whatsapp"></i>
+        <div class="order-form-container">
+            <form onsubmit="sendBookingToWhatsApp(event)">
+                <div class="form-grid-custom">
+                    <!-- اسم العميل -->
+                    <div class="form-group-custom">
+                        <label data-ar="الاسم بالكامل" data-en="Full Name">الاسم بالكامل</label>
+                        <input type="text" id="custName" placeholder="أدخل اسمك الكريم" required>
+                    </div>
 
-    </a>
+                    <!-- رقم الموبايل -->
+                    <div class="form-group-custom">
+                        <label data-ar="رقم الموبايل" data-en="Mobile Number">رقم الموبايل</label>
+                        <input type="tel" id="custPhone" placeholder="01xxxxxxxx" required>
+                    </div>
 
-    <button class="scroll-top"
-            id="scrollTopBtn"
-            onclick="scrollToTop()"
-            aria-label="العودة للأعلى">
+                    <!-- اختيار الماركة والسيارة -->
+                    <div class="form-group-custom">
+                        <label data-ar="اختر الماركة والسيارة" data-en="Select Brand & Car">اختر الماركة والسيارة</label>
+                        <select id="custCar" required>
+                            <option value="">-- اختر السيارة --</option>
+                            <option value="أودي - Audi">أودي - Audi</option>
+                            <option value="بي إم دبليو - BMW">بي إم دبليو - BMW</option>
+                            <option value="فولكس فاجن - Volkswagen">فولكس فاجن - Volkswagen</option>
+                            <option value="أوبل - Opel">أوبل - Opel</option>
+                            <option value="مرسيدس - Mercedes">مرسيدس - Mercedes</option>
+                            <option value="فيات - Fiat">فيات - Fiat</option>
+                            <option value="بيجو - Peugeot">بيجو - Peugeot</option>
+                            <option value="رينو - Renault">رينو - Renault</option>
+                            <option value="ستروين - Citroën">ستروين - Citroën</option>
+                            <option value="سكودا - Skoda">سكودا - Skoda</option>
+                            <option value="سيات - Seat">سيات - Seat</option>
+                            <option value="كوبرا - Cupra">كوبرا - Cupra</option>
+                            <option value="ڤولڤو - Volvo">ڤولڤو - Volvo</option>
+                            <option value="نيسان - Nissan">نيسان - Nissan</option>
+                            <option value="تويوتا - Toyota">تويوتا - Toyota</option>
+                            <option value="سوزوكي - Suzuki">سوزوكي - Suzuki</option>
+                            <option value="مازدا - Mazda">مازدا - Mazda</option>
+                            <option value="سوبارو - Subaru">سوبارو - Subaru</option>
+                            <option value="هيونداي - Hyundai">هيونداي - Hyundai</option>
+                            <option value="كيا - Kia">كيا - Kia</option>
+                            <option value="كي جي إم - KGM">كي جي إم - KGM</option>
+                            <option value="بروتون - Proton">بروتون - Proton</option>
+                            <option value="كايي - Kaiyi">كايي - Kaiyi</option>
+                            <option value="إم جي - MG">إم جي - MG</option>
+                            <option value="ديبال - Deepal">ديبال - Deepal</option>
+                            <option value="شيري - Chery">شيري - Chery</option>
+                            <option value="بي واي دي - BYD">بي واي دي - BYD</option>
+                            <option value="شانجان - Changan">شانجان - Changan</option>
+                            <option value="جي إيه سي - GAC">جي إيه سي - GAC</option>
+                            <option value="سويست - Soueast">سويست - Soueast</option>
+                            <option value="بايك - BAIC">بايك - BAIC</option>
+                            <option value="هافال - Haval">هافال - Haval</option>
+                            <option value="جيلي - Geely">جيلي - Geely</option>
+                            <option value="جيتور - Jetour">جيتور - Jetour</option>
+                        </select>
+                    </div>
 
-        <i class="fa-solid fa-arrow-up"></i>
+                    <!-- اختيار الفئة -->
+                    <div class="form-group-custom">
+                        <label data-ar="اختر الفئة" data-en="Select Trim/Category">اختر الفئة</label>
+                        <select id="custCategory" required>
+                            <option value="">-- اختر الفئة --</option>
+                            <option value="الفئة الأولى (Basic)">الفئة الأولى (Basic)</option>
+                            <option value="الفئة الثانية (Midline)">الفئة الثانية (Midline)</option>
+                            <option value="الفئة الأعلى (Highline / Full Option)">الفئة الأعلى (Highline / Full Option)</option>
+                        </select>
+                    </div>
 
-    </button>
+                    <!-- اختيار اللون -->
+                    <div class="form-group-custom">
+                        <label data-ar="اللون المفضل" data-en="Preferred Color">اللون المفضل</label>
+                        <input type="text" id="custColor" placeholder="مثال: أسود، أبيض، رمادي..." required>
+                    </div>
+
+                    <!-- الفرع المفضل -->
+                    <div class="form-group-custom">
+                        <label data-ar="الفرع المفضل للمعاينة" data-en="Preferred Branch">الفرع المفضل للمعاينة</label>
+                        <select id="custBranch">
+                            <option value="مصر الجديدة - روكسي">مصر الجديدة - روكسي</option>
+                            <option value="مصر الجديدة - عمار بن ياسر">مصر الجديدة - عمار بن ياسر</option>
+                            <option value="الجيزة - نزلة كوبري الدقي">الجيزة - نزلة كوبري الدقي</option>
+                            <option value="الجيزة - العجوزة (الصحفيين)">الجيزة - العجوزة (الصحفيين)</option>
+                            <option value="مدينة نصر - مكرم عبيد">مدينة نصر - مكرم عبيد</option>
+                            <option value="مدينة نصر - ذاكر حسين">مدينة نصر - ذاكر حسين</option>
+                            <option value="مدينتي - مدخل 1">مدينتي - مدخل 1</option>
+                            <option value="كورنيش النيل - الساحل">كورنيش النيل - الساحل</option>
+                            <option value="القطامية - وان قطامية">القطامية - وان قطامية</option>
+                            <option value="الغردقة - بنزينة Mobil">الغردقة - بنزينة Mobil</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- تفاصيل وملاحظات إضافية -->
+                <div class="form-group-custom" style="margin-top: 20px;">
+                    <label data-ar="تفاصيل أو ملاحظات إضافية" data-en="Additional Details">تفاصيل أو ملاحظات إضافية</label>
+                    <textarea id="custNotes" rows="3" placeholder="اكتب أي استفسار آخر أو تفاصيل تمويل/كاش..."></textarea>
+                </div>
+
+                <!-- 🔘 زر الإرسال العادي -->
+                <button type="submit" class="btn-whatsapp-send">
+                    <span data-ar="إرسال الطلب الآن" data-en="Send Request Now">إرسال الطلب الآن</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 📄 قسم بروشورات السيارات PDF -->
+    <div class="container" id="brochures">
+        <div class="section-title">
+            <h2 data-ar="بروشورات السيارات (PDF)" data-en="Car Brochures (PDF)">
+                بروشورات السيارات (PDF)
+            </h2>
+            <p data-ar="يمكنك تحمِيل واستعراض كتالوجات ومواصفات السيارات الرسمية بملفات PDF" data-en="Download and review official car brochures and specifications in PDF format">
+                يمكنك تحمِيل واستعراض كتالوجات ومواصفات السيارات الرسمية بملفات PDF
+            </p>
+        </div>
+
+        <div class="brands-grid" id="brochuresGrid">
+            <div class="brochure-card">
+                <i class="fa-solid fa-file-pdf brochure-icon"></i>
+                <h3>تويوتا كورولا - Corolla</h3>
+                <p data-ar="الكتالوج الرسمي للمواصفات الفنية والأسعار" data-en="Official Specs & Features Catalog">
+                    الكتالوج الرسمي للمواصفات الفنية والأسعار
+                </p>
+                <a href="brochures/toyota-corolla.pdf" target="_blank" class="brochure-btn" data-ar="تحميل البروشور PDF" data-en="Download PDF Brochure">
+                    <i class="fa-solid fa-download"></i> تحميل البروشور PDF
+                </a>
+            </div>
+
+            <div class="brochure-card">
+                <i class="fa-solid fa-file-pdf brochure-icon"></i>
+                <h3>بي إم دبليو الفئة الثالثة - BMW 3 Series</h3>
+                <p data-ar="الكتالوج الرسمي للمواصفات الفنية والأسعار" data-en="Official Specs & Features Catalog">
+                    الكتالوج الرسمي للمواصفات الفنية والأسعار
+                </p>
+                <a href="brochures/bmw-3series.pdf" target="_blank" class="brochure-btn" data-ar="تحميل البروشور PDF" data-en="Download PDF Brochure">
+                    <i class="fa-solid fa-download"></i> تحميل البروشور PDF
+                </a>
+            </div>
+
+            <div class="brochure-card">
+                <i class="fa-solid fa-file-pdf brochure-icon"></i>
+                <h3>مرسيدس C-Class</h3>
+                <p data-ar="الكتالوج الرسمي للمواصفات الفنية والأسعار" data-en="Official Specs & Features Catalog">
+                    الكتالوج الرسمي للمواصفات الفنية والأسعار
+                </p>
+                <a href="brochures/mercedes-cclass.pdf" target="_blank" class="brochure-btn" data-ar="تحميل البروشور PDF" data-en="Download PDF Brochure">
+                    <i class="fa-solid fa-download"></i> تحميل البروشور PDF
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🏢 قسم الفروع المخصص والمنفصل -->
+    <div class="container" id="branchesPage">
+        <div class="section-title">
+            <h2 data-ar="فروع أبو زيد للسيارات" data-en="Our Branches">
+                فروع أبو زيد للسيارات
+            </h2>
+            <p data-ar="يسعدنا استقبالكم في أقرب فرع لكم للاستفسار وتجربة القيادة" data-en="We are delighted to welcome you at our nearest branch">
+                يسعدنا استقبالكم في أقرب فرع لكم للاستفسار وتجربة القيادة
+            </p>
+        </div>
+
+        <div class="branches-container">
+            <!-- فروع مصر الجديدة -->
+            <div class="branch-card-custom">
+                <div>
+                    <h3><i class="fa-solid fa-location-dot"></i> مصر الجديدة - روكسي</h3>
+                    <div class="branch-detail">
+                        <i class="fa-solid fa-map-pin"></i>
+                        <span>64 الخليفة المأمون - مصر الجديدة - روكسي</span>
+                    </div>
+                </div>
+                <a href="https://maps.app.goo.gl/n9QXCPHjEeRiYKoR8?g_st=ic" target="_blank" class="branch-map-btn">
+                    <i class="fa-solid fa-diamond-turn-right"></i> اتجاهات الخريطة
+                </a>
+            </div>
+
+            <div class="branch-card-custom">
+                <div>
+                    <h3><i class="fa-solid fa-location-dot"></i> مصر الجديدة - النزهة</h3>
+                    <div class="branch-detail">
+                        <i class="fa-solid fa-map-pin"></i>
+                        <span>28 ش عمار بن ياسر, النزهة, مصر الجديدة, أمام سور الكلية الحربية</span>
+                    </div>
+                </div>
+                <a href="https://maps.app.goo.gl/12b5DCewsksJiL8U6?g_st=ipc" target="_blank" class="branch-map-btn">
+                    <i class="fa-solid fa-diamond-turn-right"></i> اتجاهات الخريطة
+                </a>
+            </div>
+
+            <!-- فروع الجيزة -->
+            <div class="branch-card-custom">
+                <div>
+                    <h3><i class="fa-solid fa-location-dot"></i> الجيزة - الدقي</h3>
+                    <div class="branch-detail">
+                        <i class="fa-solid fa-map-pin"></i>
+                        <span>19 شارع وزارة الزراعة - نزلة كوبري الدقي - الجيزة</span>
+                    </div>
+                </div>
+                <a href="https://maps.app.goo.gl/qw9u4rc9ngb91t6LA" target="_blank" class="branch-map-btn">
+                    <i class="fa-solid fa-diamond-turn-right"></i> اتجاهات الخريطة
+                </a>
+            </div>
+
+            <div class="branch-card-custom">
+                <div>
+                    <h3><i class="fa-solid fa-location-dot"></i> الجيزة - العجوزة</h3>
+                    <div class="branch-detail">
+                        <i class="fa-solid fa-map-pin"></i>
+                        <span>144 شارع 26 يوليو منطقة الصحفيين حي العجوزة بجوار مسرح البالون</span>
+                    </div>
+                </div>
+                <a href="https://maps.app.goo.gl/yunzdmyFsZ2gpEKS9" target="_blank" class="branch-map-btn">
+                    <i class="fa-solid fa-diamond-turn-right"></i> اتجاهات الخريطة
+                </a>
+            </div>
+
+            <!-- فروع مدينة نصر -->
+            <div class="branch-card-custom">
+                <div>
+                    <h3><i class="fa-solid fa-location-dot"></i> مدينة نصر - مكرم عبيد</h3>
+                    <div class="branch-detail">
+                        <i class="fa-solid fa-map-pin"></i>
+                        <span>16 شارع كابول متفرع من مكرم عبيد أمام مول مصطفى السلاب مباشرة</span>
+                    </div>
+                </div>
+                <a href="https://maps.app.goo.gl/rUVigECAb9KZnnVJ7" target="_blank" class="branch-map-btn">
+                    <i class="fa-solid fa-diamond-turn-right"></i> اتجاهات الخريطة
+                </a>
+            </div>
+
+            <div class="branch-card-custom">
+                <div>
+                    <h3><i class="fa-solid fa-location-dot"></i> مدينة نصر - ذاكر حسين</h3>
+                    <div class="branch-detail">
+                        <i class="fa-solid fa-map-pin"></i>
+                        <span>35 ذاكر حسين - مدينة نصر</span>
+                    </div>
+                </div>
+                <a href="https://maps.app.goo.gl/sKYqyRVTe2jK45Vp9" target="_blank" class="branch-map-btn">
+                    <i class="fa-solid fa-diamond-turn-right"></i> اتجاهات الخريطة
+                </a>
+            </div>
+
+            <!-- فرع مدينتي -->
+            <div class="branch-card-custom">
+                <div>
+                    <h3><i class="fa-solid fa-location-dot"></i> فرع مدينتي</h3>
+                    <div class="branch-detail">
+                        <i class="fa-solid fa-map-pin"></i>
+                        <span>مدخل مدينتي 1 - بجوار بنزينة Chillout - طريق السويس</span>
+                    </div>
+                </div>
+                <a href="https://maps.app.goo.gl/EoJ2jWBpmiuFN44b9" target="_blank" class="branch-map-btn">
+                    <i class="fa-solid fa-diamond-turn-right"></i> اتجاهات الخريطة
+                </a>
+            </div>
+
+            <!-- فرع كورنيش النيل -->
+            <div class="branch-card-custom">
+                <div>
+                    <h3><i class="fa-solid fa-location-dot"></i> فرع كورنيش النيل</h3>
+                    <div class="branch-detail">
+                        <i class="fa-solid fa-map-pin"></i>
+                        <span>الساحل - 1351 كورنيش النيل</span>
+                    </div>
+                </div>
+                <a href="https://maps.app.goo.gl/nCKJbiU9cCJFfnbF8" target="_blank" class="branch-map-btn">
+                    <i class="fa-solid fa-diamond-turn-right"></i> اتجاهات الخريطة
+                </a>
+            </div>
+
+            <!-- فرع القطامية -->
+            <div class="branch-card-custom">
+                <div>
+                    <h3><i class="fa-solid fa-location-dot"></i> فرع القطامية</h3>
+                    <div class="branch-detail">
+                        <i class="fa-solid fa-map-pin"></i>
+                        <span>وان قطامية، الطريق الدائري، أعلى نفق السخنة، ميدان محمد زكي</span>
+                    </div>
+                </div>
+                <a href="https://maps.app.goo.gl/Q58AwLPyJeJbjR2a7" target="_blank" class="branch-map-btn">
+                    <i class="fa-solid fa-diamond-turn-right"></i> اتجاهات الخريطة
+                </a>
+            </div>
+
+            <!-- فرع الغردقة -->
+            <div class="branch-card-custom">
+                <div>
+                    <h3><i class="fa-solid fa-location-dot"></i> فرع الغردقة</h3>
+                    <div class="branch-detail">
+                        <i class="fa-solid fa-map-pin"></i>
+                        <span>بنزينة Mobil أمام الجونة - الغردقة</span>
+                    </div>
+                </div>
+                <a href="https://maps.google.com" target="_blank" class="branch-map-btn">
+                    <i class="fa-solid fa-diamond-turn-right"></i> اتجاهات الخريطة
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 📞 قسم التواصل والمنصات والـ Hotline -->
+    <div class="container" id="contactSocialPage">
+        <div class="section-title">
+            <h2 data-ar="تواصل معنا والمنصات الاجتماعية" data-en="Contact & Social Media">
+                تواصل معنا والمنصات الاجتماعية
+            </h2>
+            <p data-ar="تابعنا على مواقع التواصل الاجتماعي أو اتصل بنا مباشرة على الخط الساخن" data-en="Follow us on social media or call our hotline directly">
+                تابعنا على مواقع التواصل الاجتماعي أو اتصل بنا مباشرة على الخط الساخن
+            </p>
+        </div>
+
+        <div class="social-contact-wrapper">
+            <!-- بنر الخط الساخن المميز -->
+            <div class="hotline-banner">
+                <i class="fa-solid fa-headset fa-2x"></i>
+                <span data-ar="الخط الساخن للمبيعات والاستفسارات" data-en="Sales & Inquiry Hotline">الخط الساخن للمبيعات والاستفسارات</span>
+                <a href="tel:15079">15079</a>
+            </div>
+
+            <!-- كروت وسائل التواصل الاجتماعي الرسمية -->
+            <div class="social-cards-grid">
+                <a href="https://www.facebook.com/share/1GLY1MK1MX/?mibextid=wwXIfr" target="_blank" class="social-box social-facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <span>فيسبوك - Facebook</span>
+                </a>
+
+                <a href="https://www.instagram.com/abuzeid_automotive?stkn=NjVrcmh6OHk4cm9i" target="_blank" class="social-box social-instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>إنستغرام - Instagram</span>
+                </a>
+
+                <a href="https://www.tiktok.com/@abu_zeid_automotive?_r=1&_t=ZS-99ySvdfkZfO" target="_blank" class="social-box social-tiktok">
+                    <i class="fa-brands fa-tiktok"></i>
+                    <span>تيك توك - TikTok</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <footer>
-
-        <p data-ar="جميع الحقوق محفوظة © 2026 أبو زيد للسيارات"
-           data-en="All Rights Reserved © 2026 Abu Zeid Automotive">
-
-            جميع الحقوق محفوظة © 2026 أبو زيد للسيارات
-
+        <p data-ar="جميع الحقوق محفوظة © أبو زيد للسيارات" data-en="All Rights Reserved © Abu Zeid Automotive">
+            جميع الحقوق محفوظة © أبو زيد للسيارات
         </p>
-
     </footer>
 
+    <!-- JavaScript للوظائف والتحكم بالصفحات وإرسال الواتساب -->
     <script>
-
-        let currentLang = 'ar';
-        let currentCategory = 'all';
-
-
-        const carModels = {
-
+        const carModelsData = {
             Audi: [
                 ["Audi A3", "https://ellaithy.com.eg/wp-content/uploads/2020/02/1760868971_203_64280_1.webp"],
                 ["Audi A4", "https://cdn.al-ain.com/lg/images/2025/7/23/62-142556-dead-cars-2026-2.jpeg"],
-                ["Audi Q5", "https://nar-dam.audi.com/adobe/assets/urn:aaid:aem:3a0a41c8-7f4c-4489-acae-a1987667e5a1/as/1200x675_All-New_2025_Audi-Q5_Asset.jpg?auto=webp"],            
+                ["Audi Q5", "https://nar-dam.audi.com/adobe/assets/urn:aaid:aem:3a0a41c8-7f4c-4489-acae-a1987667e5a1/as/1200x675_All-New_2025_Audi-Q5_Asset.jpg?auto=webp"]     
             ],
 
             BMW: [
@@ -1577,7 +1583,7 @@
                 ["BMW X3", "https://assets.pulseseo.net/2025/BMW/X3/2025BMWX3-exterior-01.jpg"],
                 ["BMW X4", "https://imgcdn.zigwheels.co.th/large/gallery/exterior/4/48/bmw-x4-front-angle-low-view-507315.jpg"],        
                 ["BMW X5", "https://www.bmwgroup.com/content/dam/grpw/websites/bmwgroup_com/News/2026/bmw-group-news-bmw-x5-image1-3x2.jpg"],
-                ["BMW X6", "https://i.gaw.to/vehicles/photos/40/41/404106-2026-bmw-x6.jpg"]            
+                ["BMW X6", "https://i.gaw.to/vehicles/photos/40/41/404106-2026-bmw-x6.jpg"]     
             ],
 
             Volkswagen: [
@@ -1591,14 +1597,13 @@
                 ["Opel Grandland", "https://contactcars.fra1.cdn.digitaloceanspaces.com/contactcars-production/Images/Large/Engines/4885cdf126d7_f6ca6bda-c437-4be4-acb0-e04d71655364.jpeg"],
                 ["Opel Crossland", "https://i0.wp.com/motorsport.ie/wp-content/uploads/2026/08/Opel-Corsa-GSE-b.jpg?fit=1100%2C757&ssl=1"],
                 ["Opel FRONTERA", "https://contactcars.fra1.cdn.digitaloceanspaces.com/contactcars-production/Images/Large/Engines/556af1f1c69d_400a7705-7fa2-4645-b5cc-a2f998772756.jpeg"],
-                ["Opel Mokka", "https://www.finalcd.sk/cms/upload/modely/novy_opel_mokka-28_7497.jpg"],         
-            
+                ["Opel Mokka", "https://www.finalcd.sk/cms/upload/modely/novy_opel_mokka-28_7497.jpg"]
             ],
 
             Mercedes: [
                 ["Mercedes C-Class", "https://di-uploads-pod14.dealerinspire.com/downtownlamotorsmercedesbenz/uploads/2026/06/2027-C-SEDAN-BEV-FMG-004-FE-DR-1-.jpg"],
                 ["Mercedes E-Class", "https://media.ed.edmunds-media.com/mercedes-benz/e-class/2026/oem/2026_mercedes-benz_e-class_sedan_amg-e-53-hybrid_fq_oem_1_600.jpg"],
-                ["Mercedes GLE", "https://media.i-sgcm.com/article/articleImages/gallery/38666/38666_1.jpg"],
+                ["Mercedes GLE", "https://media.i-sgcm.com/article/articleImages/gallery/38666/38666_1.jpg"]
             ],
 
             Fiat: [
@@ -1646,7 +1651,6 @@
                 ["Volvo XC40", "https://hips.hearstapps.com/mtg-prod/67521876c4a4980008764fe4/1-2025-volvo-xc40-front-view.jpg"],
                 ["Volvo XC60", "https://www.actualidadmotor.com/wp-content/uploads/2022/02/Volvo-XC60-2025-Portada-2048x1229.jpeg"],
                 ["Volvo XC90", "https://di-uploads-pod13.dealerinspire.com/volvocarscincinnatinorth/uploads/2025/04/Volvo-XC90-Ultra-2504.webp"]
-            
             ],
 
             Nissan: [
@@ -1656,7 +1660,8 @@
             ],
 
             Toyota: [
-                    ["Toyota Corolla", "https://www.egy-car.com/wp-content/uploads/2022/06/%D8%AA%D9%88%D9%8A%D9%88%D8%AA%D8%A7-%D9%83%D9%88%D8%B1%D9%88%D9%84%D8%A7-%D9%81%D9%8A%D8%B3-%D9%84%D9%8A%D9%81%D8%AA-2023.jpg"]            ],
+                ["Toyota Corolla", "https://www.egy-car.com/wp-content/uploads/2022/06/%D8%AA%D9%88%D9%8A%D9%88%D8%AA%D8%A7-%D9%83%D9%88%D8%B1%D9%88%D9%84%D8%A7-%D9%81%D9%8A%D8%B3-%D9%84%D9%8A%D9%81%D8%AA-2023.jpg"]
+            ],
 
             Suzuki: [
                 ["Suzuki Swift", "https://suzukiegypt.net/wp-content/uploads/2022/11/featured-9.jpg"],
@@ -1665,9 +1670,9 @@
             ],
 
             Mazda: [
-             ["Mazda 3", "https://media.ed.edmunds-media.com/mazda/3/2026/oem/2026_mazda_3_sedan_25-s-carbon-edition_fq_oem_1_1600.jpg"],
-             ["Mazda CX-5", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWXvEl6-tCQx3MKUcqKYFOyNa1ILT2cad6JhuaJ4MB1zcX1l6V-cXUnRk&s=10"],
-            ["Mazda CX-60", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0sjzMwD1tf8cMsNsCgUZLAe4yw3KmKFEq51yWdOwp0jFFYY5dQ1fp0VY&s=10"]
+               ["Mazda 3", "https://media.ed.edmunds-media.com/mazda/3/2026/oem/2026_mazda_3_sedan_25-s-carbon-edition_fq_oem_1_1600.jpg"],
+               ["Mazda CX-5", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWXvEl6-tCQx3MKUcqKYFOyNa1ILT2cad6JhuaJ4MB1zcX1l6V-cXUnRk&s=10"],
+               ["Mazda CX-60", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0sjzMwD1tf8cMsNsCgUZLAe4yw3KmKFEq51yWdOwp0jFFYY5dQ1fp0VY&s=10"]
             ],
 
             Subaru: [
@@ -1700,7 +1705,8 @@
             ],
 
             Proton: [
-                ["Proton Saga", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSITjACFWKenE158rOIlKxA67D5qO3zcyhpen1Y7WafOg&s=10"]                   ],  
+                ["Proton Saga", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSITjACFWKenE158rOIlKxA67D5qO3zcyhpen1Y7WafOg&s=10"]
+            ],  
 
             Kaiyi: [
               ["Kaiyi X3 Pro", "https://media.almalnews.com/2026/6/large/2955873276883202606060520112011.jpg"],
@@ -1718,7 +1724,7 @@
                 ["Deepal G318", "https://deepal.ma/_next/image?url=%2Fimages%2Fg318%2Fexterior%2FG318_Grey_EX_Front%20_Right70.jpg&w=3840&q=75"],
                 ["Deepal S07", "https://deepaloman.com/_next/image?url=%2Fassets%2Fs07%2FS07.jpg&w=3840&q=75"],
                 ["Deepal S05", "https://deepal-eg.com/media/products/S05_Car_Model_Page_1_-_2.3___1_SGmTjAz.png"]  
-          ],
+            ],
 
             Chery: [
                 ["Chery Tiggo 4 PRO", "https://www.chery-eg.com/media/extDesignImages/3Small-Interior-exterior-safety-tech-banner--550--300.jpg"],
@@ -1765,7 +1771,7 @@
 
             BAIC: [
                 ["BAIC X35", "https://cdn-news.hatla2ee.com/uploads/2026/02/baic-x35-1280x1536-1-e1769643759298.jpg"],
-                ["BAIC X55", "https://www.egy-car.com/wp-content/uploads/2024/05/%D8%B3%D8%B9%D8%B1-%D8%A8%D8%A7%D9%8A%D9%83-X55.jpg"],
+                ["BAIC X55", "https://www.egy-car.com/wp-content/uploads/2024/05/%D8%B3%D9%89%D8%B9%D8%B1-%D8%A8%D8%A7%D9%8A%D9%83-X55.jpg"],
                 ["BAIC X7", "https://m.tichetech.com/spec/c08deb05881614f546c4b4753e21d79cbcef17ce4d5b35f60ad2119a87c8e2f5.webp/d?imageMogr2/thumbnail/x900/quality/80/format/webp/strip|imageSlim"]
             ],
 
@@ -1782,438 +1788,139 @@
             ],
 
             Jetour: [
-             ["Jetour X70", "https://zautoshow.com/wp-content/uploads/2025/08/%D8%AC%D9%8A%D8%AA%D9%88%D8%B1-X70-2026.webp"],
-             ["Jetour X90", "https://jetouregypt.com/models/x90-plus-1-6t/new_assets/images/1.jpg"],
-             ["Jetour Dashing", "https://evmotors.com/wp-content/uploads/2025/06/Jetour-Dashing-_thumb_1.jpg"]
+              ["Jetour X70", "https://zautoshow.com/wp-content/uploads/2025/08/%D8%AC%D9%8A%D8%AA%D9%88%D8%B1-X70-2026.webp"],
+              ["Jetour X90", "https://jetouregypt.com/models/x90-plus-1-6t/new_assets/images/1.jpg"],
+              ["Jetour Dashing", "https://evmotors.com/wp-content/uploads/2025/06/Jetour-Dashing-_thumb_1.jpg"]
             ]
-
         };
 
+        let currentLang = 'ar';
 
-       function openModels(brand) {
+        function sendBookingToWhatsApp(event) {
+            event.preventDefault();
+            
+            const myPhoneNumber = "201200000000"; 
 
-    const page = document.getElementById("modelsPage");
-    const title = document.getElementById("modelsTitle");
-    const grid = document.getElementById("modelsGrid");
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const car = document.getElementById('custCar').value;
+            const category = document.getElementById('custCategory').value;
+            const color = document.getElementById('custColor').value;
+            const branch = document.getElementById('custBranch').value;
+            const notes = document.getElementById('custNotes').value || "لا يوجد";
 
-    title.textContent = brand;
+            const message = `👋 *طلب استفسار / حجز جديد - أبو زيد للسيارات*%0A%0A` +
+                            `👤 *اسم العميل:* ${name}%0A` +
+                            `📱 *رقم الموبايل:* ${phone}%0A` +
+                            `🚗 *السيارة المطلوبة:* ${car}%0A` +
+                            `⚙️ *الفئة:* ${category}%0A` +
+                            `🎨 *اللون المفضل:* ${color}%0A` +
+                            `🏢 *الفرع المفضل:* ${branch}%0A` +
+                            `📝 *ملاحظات وتفاصيل:* ${notes}`;
 
-    grid.innerHTML = "";
-
-    const models = carModels[brand] || [];
-
-    if (models.length === 0) {
-
-        grid.innerHTML = `
-            <div class="model-card">
-                <div class="model-info">
-                    <h3>${brand}</h3>
-                    <p>${currentLang === 'ar' ? 'سيتم إضافة الموديلات قريبًا' : 'Models will be added soon'}</p>
-                </div>
-            </div>
-        `;
-
-    } else {
-
-        models.forEach(model => {
-
-            const card = document.createElement("div");
-
-            card.className = "model-card";
-
-            card.innerHTML = `
-
-                <img
-                    src="${model[1]}"
-                    alt="${model[0]}"
-                    loading="lazy"
-                    onerror="this.style.display='none';"
-                >
-
-                <div class="model-info">
-
-                    <h3>${model[0]}</h3>
-
-                    <p>
-                        أبو زيد للسيارات
-                    </p>
-
-                    <a
-                        href="#booking"
-                        class="model-more-btn"
-                        onclick="inquireModel('${brand}', '${model[0].replace(/'/g, "\\'")}')"
-                    >
-                        ${currentLang === 'ar' ? 'استفسر عن السيارة' : 'Inquire About Car'}
-                    </a>
-
-                </div>
-            `;
-
-            grid.appendChild(card);
-
-        });
-
-    }
-
-    page.classList.add("active");
-    document.body.style.overflow = "hidden";
-
-    window.scrollTo({
-        top: 0,
-        behavior: "auto"
-    });
-
-}
-
-
-function closeModels() {
-
-    const page = document.getElementById("modelsPage");
-
-    page.classList.remove("active");
-
-    document.body.style.overflow = "";
-
-}
-
-
-function inquireModel(brand, model) {
-
-    const select = document.getElementById("brandSelect");
-
-    if (select) {
-        select.value = brand;
-    }
-
-    // 🟢 إضافة الموديل تلقائياً داخل خانة التفاصيل عند الضغط على "استفسر عن السيارة"
-    const detailsInput = document.getElementById("detailsInput");
-    if (detailsInput) {
-        detailsInput.value = currentLang === 'ar' 
-            ? `استفسار عن موديل: ${model}` 
-            : `Inquiry for model: ${model}`;
-    }
-
-    closeModels();
-
-    setTimeout(() => {
-
-        const booking = document.getElementById("booking");
-
-        if (booking) {
-            booking.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
+            const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${message}`;
+            window.open(whatsappUrl, '_blank');
         }
 
-    }, 50);
+        function openModels(brandKey) {
+            const modelsPage = document.getElementById('modelsPage');
+            const modelsTitle = document.getElementById('modelsTitle');
+            const modelsGrid = document.getElementById('modelsGrid');
 
-}
+            modelsTitle.innerText = brandKey;
+            modelsGrid.innerHTML = '';
 
+            const list = carModelsData[brandKey] || [];
 
-function submitBooking(event) {
-
-    event.preventDefault();
-
-    // 🟢 جلب البيانات المدخلة في خانة التفاصيل
-    const detailsVal = document.getElementById("detailsInput") ? document.getElementById("detailsInput").value : "";
-
-    const message =
-        currentLang === 'ar'
-            ? 'تم إرسال طلبك بنجاح! سيتم التواصل معك قريباً.'
-            : 'Your request has been submitted successfully! We will contact you soon.';
-
-    alert(message);
-}
-
-            alert(message);
-
-
-            function toggleTheme() {
-
-            const html = document.documentElement;
-
-            const themeBtnIcon =
-                document.querySelector('#themeToggle i');
-
-            if (html.getAttribute('data-theme') === 'dark') {
-
-                html.removeAttribute('data-theme');
-
-                themeBtnIcon.className =
-                    'fa-solid fa-moon';
-
+            if (list.length === 0) {
+                modelsGrid.innerHTML = `<p style="grid-column: 1/-1; text-align:center;">${currentLang === 'ar' ? 'جاري إضافة الموديلات قريباً...' : 'Models coming soon...'}</p>`;
             } else {
+                list.forEach(item => {
+                    const carName = item[0];
+                    const carImg = item[1];
+                    const defaultDownPaymentAr = "300,000 ج.م";
+                    const defaultDownPaymentEn = "300,000 EGP";
 
-                html.setAttribute('data-theme', 'dark');
+                    const priceLabel = currentLang === 'ar' ? 'المقدم يبدأ من' : 'Down Payment From';
+                    const priceValue = currentLang === 'ar' ? defaultDownPaymentAr : defaultDownPaymentEn;
 
-                themeBtnIcon.className =
-                    'fa-solid fa-sun';
-
+                    const card = document.createElement('div');
+                    card.className = 'model-card';
+                    card.innerHTML = `
+                        <img src="${carImg}" alt="${carName}" onerror="this.src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80'">
+                        <div class="model-info">
+                            <div>
+                                <h3>${carName}</h3>
+                                <p>${currentLang === 'ar' ? 'أفضل أنظمة التقسيط المتاحة' : 'Best Financing Options Available'}</p>
+                            </div>
+                            <div>
+                                <div class="model-price">💵 ${priceLabel}: ${priceValue}</div>
+                                <a href="#carBookingPage" onclick="closeModels(); document.getElementById('custCar').value='${carName}';" class="model-more-btn">
+                                    ${currentLang === 'ar' ? 'طلب استفسار / حجز' : 'Inquire / Book'}
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    modelsGrid.appendChild(card);
+                });
             }
 
+            modelsPage.classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
 
+        function closeModels() {
+            document.getElementById('modelsPage').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            document.getElementById('themeToggle').innerHTML = targetTheme === 'dark' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+        }
 
         function toggleLang() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            document.getElementById('htmlRoot').dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.getElementById('langToggle').innerText = currentLang === 'ar' ? 'EN' : 'عربي';
 
-            const html = document.documentElement;
-
-            const langBtn =
-                document.getElementById('langToggle');
-
-            currentLang =
-                currentLang === 'ar'
-                    ? 'en'
-                    : 'ar';
-
-            html.setAttribute('lang', currentLang);
-
-            html.setAttribute(
-                'dir',
-                currentLang === 'ar'
-                    ? 'rtl'
-                    : 'ltr'
-            );
-
-            langBtn.textContent =
-                currentLang === 'ar'
-                    ? 'EN'
-                    : 'AR';
-
-
-            document.querySelectorAll('[data-ar]')
-                .forEach(el => {
-
-                    const text =
-                        el.getAttribute(`data-${currentLang}`);
-
-                    if (text) {
-
-                        if (el.tagName.toLowerCase() === 'title') {
-                            el.textContent = text;
-                        } else {
-                            el.textContent = text;
-                        }
-
-                    }
-
-                });
-
-
-            document.querySelectorAll('[data-ar-placeholder]')
-                .forEach(el => {
-
-                    const placeholder =
-                        el.getAttribute(
-                            `data-${currentLang}-placeholder`
-                        );
-
-                    if (placeholder) {
-                        el.placeholder = placeholder;
-                    }
-
-                });
-
-            updateBrandOptions();
-
-            if (document.getElementById("modelsPage").classList.contains("active")) {
-
-                const brand = document.getElementById("modelsTitle").textContent;
-
-                openModels(brand);
-
-            }
-
-        }
-
-
-        function updateBrandOptions() {
-
-            const select = document.getElementById('brandSelect');
-
-            if (!select) return;
-
-            const arabicNames = {
-                Audi: 'أودي',
-                BMW: 'بي إم دبليو',
-                Volkswagen: 'فولكس فاجن',
-                Opel: 'أوبل',
-                Mercedes: 'مرسيدس',
-                Fiat: 'فيات',
-                Peugeot: 'بيجو',
-                Renault: 'رينو',
-                Citroen: 'ستروين',
-                Skoda: 'سكودا',
-                Seat: 'سيات',
-                Cupra: 'كوبرا',
-                Volvo: 'ڤولڤو',
-                Nissan: 'نيسان',
-                Toyota: 'تويوتا',
-                Suzuki: 'سوزوكي',
-                Mazda: 'مازدا',
-                Subaru: 'سوبارو',
-                Hyundai: 'هيونداي',
-                Kia: 'كيا',
-                KGM: 'كي جي إم',
-                Proton: 'بروتون',
-                Kaiyi: 'كايي',
-                MG: 'إم جي',
-                Deepal: 'ديبال',
-                Chery: 'شيري',
-                BYD: 'بي واي دي',
-                Changan: 'شانجان',
-                GAC: 'جي إيه سي',
-                Soueast: 'سويست',
-                BAIC: 'بايك',
-                Haval: 'هافال',
-                Geely: 'جيلي',
-                Jetour: 'جيتور'
-            };
-
-            Array.from(select.options).forEach(option => {
-
-                const value = option.value;
-
-                option.textContent =
-                    currentLang === 'ar'
-                        ? `${arabicNames[value] || value} - ${value}`
-                        : value;
-
+            document.querySelectorAll('[data-ar]').forEach(el => {
+                if (el.hasAttribute(`data-${currentLang}`)) {
+                    el.innerText = el.getAttribute(`data-${currentLang}`);
+                }
             });
-
         }
-
 
         function toggleMenu() {
-
-            const navLinks =
-                document.getElementById('navLinks');
-
-            navLinks.classList.toggle('active');
-
+            document.getElementById('navLinks').classList.toggle('active');
         }
 
+        function filterBrands(category, btnElement) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
 
-        function filterBrands(category, btn) {
-
-            currentCategory = category;
-
-            document.querySelectorAll('.filter-btn')
-                .forEach(b =>
-                    b.classList.remove('active')
-                );
-
-            btn.classList.add('active');
-
-            applyBrandFilters();
-
-        }
-
-
-        function searchBrands() {
-
-            applyBrandFilters();
-
-        }
-
-
-        function applyBrandFilters() {
-
-            const query =
-                document
-                    .getElementById('brandSearch')
-                    .value
-                    .trim()
-                    .toLowerCase();
-
-            const cards =
-                document.querySelectorAll('.brand-card');
-
-            cards.forEach(card => {
-
-                const name =
-                    card
-                        .querySelector('.brand-name')
-                        .textContent
-                        .toLowerCase();
-
-                const categoryMatch =
-                    currentCategory === 'all' ||
-                    card.getAttribute('data-category') === currentCategory;
-
-                const searchMatch =
-                    !query ||
-                    name.includes(query);
-
-                if (categoryMatch && searchMatch) {
+            document.querySelectorAll('.brand-card').forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
                     card.classList.remove('hide');
                 } else {
                     card.classList.add('hide');
                 }
-
             });
-
         }
 
-
-        window.addEventListener('scroll', function() {
-
-            const scrollBtn =
-                document.getElementById('scrollTopBtn');
-
-            if (
-                window.scrollY > 300
-            ) {
-
-                scrollBtn.classList.add('visible');
-
-            } else {
-
-                scrollBtn.classList.remove('visible');
-
-            }
-
-        });
-
-
-        function scrollToTop() {
-
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        function searchBrands() {
+            const query = document.getElementById('brandSearch').value.toLowerCase();
+            document.querySelectorAll('.brand-card').forEach(card => {
+                const name = card.innerText.toLowerCase();
+                if (name.includes(query)) {
+                    card.classList.remove('hide');
+                } else {
+                    card.classList.add('hide');
+                }
             });
-
         }
-
-
-        document.addEventListener("keydown", function(event) {
-
-            if (event.key === "Escape") {
-                closeModels();
-            }
-
-            if (
-                event.key === "Enter" &&
-                document.activeElement.classList.contains("brand-card")
-            ) {
-
-                document.activeElement.click();
-
-            }
-
-        });
-
-
-        document.addEventListener("DOMContentLoaded", function() {
-
-            updateBrandOptions();
-            applyBrandFilters();
-
-        });
-
     </script>
-
 </body>
 </html>
-```
